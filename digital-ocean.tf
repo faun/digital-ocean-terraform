@@ -8,12 +8,14 @@ variable "digitalocean_droplet_name" {}
 variable "digitalocean_droplet_image" {}
 variable "digitalocean_droplet_size" {}
 variable "digitalocean_droplet_region" {}
+variable "ssh_key_id" { default = "" }
 
 resource "digitalocean_droplet" "web" {
-  name   = "${var.digitalocean_droplet_name}"
-  image  = "${var.digitalocean_droplet_image}"
-  size   = "${var.digitalocean_droplet_size}"
-  region = "${var.digitalocean_droplet_region}"
+  name     = "${var.digitalocean_droplet_name}"
+  image    = "${var.digitalocean_droplet_image}"
+  size     = "${var.digitalocean_droplet_size}"
+  region   = "${var.digitalocean_droplet_region}"
+  ssh_keys = ["${var.ssh_key_id}"]
 }
 
 output "Droplet domain" { value = "${dnsimple_record.web.hostname}" }
