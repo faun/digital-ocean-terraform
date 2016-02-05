@@ -5,14 +5,14 @@ provider "digitalocean" {
 }
 
 variable "digitalocean_droplet_name" {}
-variable "digitalocean_droplet_image" {}
+variable "digitalocean_image_name" {}
 variable "digitalocean_droplet_size" {}
 variable "digitalocean_droplet_region" {}
 variable "ssh_key_id" { default = "" }
 
 resource "digitalocean_droplet" "web" {
   name     = "${var.digitalocean_droplet_name}"
-  image    = "${var.digitalocean_droplet_image}"
+  image    = "${var.digitalocean_image_name}"
   size     = "${var.digitalocean_droplet_size}"
   region   = "${var.digitalocean_droplet_region}"
   ssh_keys = ["${var.ssh_key_id}"]
