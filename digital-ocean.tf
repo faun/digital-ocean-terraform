@@ -8,7 +8,7 @@ variable "digitalocean_droplet_name" {}
 variable "digitalocean_image_name" {}
 variable "digitalocean_droplet_size" {}
 variable "digitalocean_droplet_region" {}
-variable "ssh_key_id" { default = "" }
+variable "ssh_key_id" {}
 
 resource "digitalocean_droplet" "web" {
   name     = "${var.digitalocean_droplet_name}"
