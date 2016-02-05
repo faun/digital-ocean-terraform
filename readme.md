@@ -30,3 +30,6 @@ ssh_key_id                  = "12345 id from `tugboat keys` command"
 ### Destroy
 
 `make destroy`
+
+### License
+See [license](./LICENSE)
