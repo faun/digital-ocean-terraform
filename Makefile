@@ -1,7 +1,7 @@
 all: plan apply
 
 plan:
-	terraform plan --var-file terraform.tfvars -out terraform-apply.tfplan
+	terraform plan --var-file terraform.tfvars --out terraform-apply.tfplan
 
 apply:
 	terraform apply --var-file terraform.tfvars
