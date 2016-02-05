@@ -22,3 +22,11 @@ digitalocean_droplet_size   = "512mb"
 digitalocean_droplet_region = "sfo1"
 ssh_key_id                  = "12345 id from `tugboat keys` command"
 ```
+
+### Create
+
+`make`
+
+### Destroy
+
+`make destroy`
