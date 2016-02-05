@@ -9,3 +9,9 @@ apply:
 destroy:
 	terraform plan --destroy --var-file terraform.tfvars --out terraform-destroy.tfplan
 	terraform apply terraform-destroy.tfplan
+
+clean:
+	find . -type f \( -name "*.tfplan" -o -name "*.tfstate*" \) -exec rm -i {} \;
+
+implode:
+	make destroy && make clean
