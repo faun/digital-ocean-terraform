@@ -24,13 +24,50 @@ digitalocean_droplet_region             = "sfo1"
 ssh_key_id                              = "12345 id from `tugboat keys` command"
 ```
 
-### Create
+### Plan infrastructure
+See what changes will be made to your server infrastructure on apply.
 
-`make`
+``` sh
+make plan
+```
+
+### Create infrastructure
+
+``` sh
+make apply
+```
+
+### Plan & create infrastructure in one step
+
+``` sh
+make
+
+# or
+
+make all
+```
 
 ### Destroy
 
-`make destroy`
+Destroy all server infrastructure created in the step above.
+
+``` sh
+make destroy
+```
+
+### Remove local state
+
+WARNING: This destroys any record of infrastructure state, thereby preventing terraform from managing your infrastructure. Use at your own risk.
+
+``` sh
+make clean
+```
+
+### Destroy server resources and remove any local state
+
+``` sh
+make implode
+```
 
 ### License
 See [license](./LICENSE)
